@@ -5,7 +5,7 @@
 }
 
 body {
-  background: linear-gradient(135deg, #e8f5e9 0%, #f1f8e9 100%);
+  background: #e8f5e9;
   min-height: 100vh;
   display: flex;
   align-items: center;
@@ -14,120 +14,189 @@ body {
   font-family: 'Segoe UI', Tahoma, sans-serif;
 }
 
-.container {
-  background: #2e7d32;
-  box-shadow: 15px 15px 50px #1b5e20, -15px -15px 50px #388e3c;
+.main-container {
+  background: #ffffff;
+  box-shadow: 10px 10px 40px #e0e0e0, -10px -10px 40px #ffffff;
   border-radius: 25px;
-  padding: 40px;
+  padding: 40px 50px;
   width: 100%;
-  max-width: 400px;
-  backdrop-filter: blur(10px);
-}
-
-@media (min-width: 768px) {
-  .container {
-    margin: 40px;
-    max-width: 500px;
-  }
-}
-
-h2 {
+  max-width: 420px;
   text-align: center;
-  margin-bottom: 30px;
-  color: #4caf50;
+  transition: transform 0.3s ease;
+}
+
+.main-container:hover {
+  transform: translateY(-2px);
+}
+
+h1 {
+  color: #2e7d32;
+  margin-bottom: 10px;
   font-size: 28px;
   letter-spacing: 1px;
   font-weight: 300;
 }
 
+.subtitle {
+  color: #81c784;
+  margin-bottom: 35px;
+  font-size: 14px;
+}
+
+.tab-buttons {
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 30px;
+}
+
+.tab-btn {
+  background: transparent;
+  border: none;
+  color: #81c784;
+  font-size: 14px;
+  padding: 8px 16px;
+  cursor: pointer;
+  border-bottom: 2px solid transparent;
+  transition: color 0.3s;
+}
+
+.tab-btn.active {
+  color: #2e7d32;
+  border-bottom: 2px solid #2e7d32;
+}
+
 .form-group {
-  margin-bottom: 25px;
+  margin-bottom: 20px;
+  text-align: left;
 }
 
 .form-group label {
   display: block;
-  margin-bottom: 8px;
-  color: #81c784;
-  font-size: 14px;
-  font-weight: 500;
+  margin-bottom: 6px;
+  color: #546e7a;
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
 }
 
 .form-group input {
   width: 100%;
-  padding: 12px 20px;
+  padding: 12px 15px;
   background: #e8f5e9;
-  border: none;
-  border-radius: 12px;
+  border: 1px solid #c8e6c9;
+  border-radius: 10px;
   outline: none;
-  box-shadow: 5px 5px 10px #c8e6c9, -5px -5px 10px #ffffff;
   font-size: 14px;
   color: #2e7d32;
-  transition: box-shadow 0.3s ease;
+  transition: border-color 0.3s, box-shadow 0.3s;
 }
 
 .form-group input:focus {
-  box-shadow: 3px 3px 8px #a5d6a7, -3px -3px 8px #ffffff;
-  padding: 14px 22px;
+  border-color: #2e7d32;
+  box-shadow: 0 0 0 3px #e8f5e9;
+  padding: 11px 14px;
 }
 
 .btn {
   width: 100%;
   padding: 12px;
-  background: #4caf50;
+  background: #2e7d32;
   border: none;
-  border-radius: 12px;
+  border-radius: 10px;
   color: white;
-  font-size: 16px;
-  font-weight: bold;
+  font-size: 15px;
+  font-weight: 500;
   cursor: pointer;
-  box-shadow: 5px 5px 10px #388e3c, -5px -5px 10px #66bb6a;
-  transition: transform 0.2s, box-shadow 0.2s;
   margin-top: 10px;
+  box-shadow: 4px 4px 10px #1b5e20, -4px -4px 10px #388e3c;
+  transition: transform 0.2s, box-shadow 0.2s;
 }
 
 .btn:hover {
   transform: translateY(2px);
-  box-shadow: 3px 3px 6px #2e7d32, -3px -3px 6px #a5d6a7;
+  box-shadow: 3px 3px 6px #1b5e20, -3px -3px 6px #388e3c;
 }
 
 .btn:active {
   transform: translateY(4px);
-  box-shadow: 1px 1px 2px #2e7d32, -1px -1px 2px #a5d6a7;
+  box-shadow: 1px 1px 2px #1b5e20, -1px -1px 2px #388e3c;
 }
 
 .link {
-  text-align: center;
   margin-top: 15px;
+  font-size: 13px;
 }
 
 .link a {
-  color: #66bb6a;
+  color: #2e7d32;
   text-decoration: none;
-  font-size: 14px;
 }
 
 .link a:hover {
   text-decoration: underline;
-  color: #a5d6a7;
+}
+
+/* Login Tab */
+.login-container {
+  display: block;
+}
+
+/* Register Tab */
+.register-container {
+  display: none;
+}
+
+.register-container.active {
+  display: block;
+}
+
+@media (min-width: 768px) {
+  .main-container {
+    margin: 40px;
+    max-width: 500px;
+    padding: 50px 60px;
+  }
+  
+  h1 {
+    font-size: 32px;
+  }
+  
+  .form-group input {
+    font-size: 15px;
+  }
+  
+  .btn {
+    font-size: 16px;
+    padding: 14px;
+  }
 }
 
 @media (max-width: 480px) {
-  .container {
+  .main-container {
     margin: 20px;
-    padding: 30px;
+    padding: 30px 20px;
   }
   
-  h2 {
+  h1 {
     font-size: 24px;
   }
   
   .form-group input {
-    padding: 10px 15px;
-    font-size: 13px;
+    padding: 10px 12px;
+    font-size: 12px;
   }
   
   .btn {
     padding: 10px;
-    font-size: 14px;
+    font-size: 13px;
+  }
+  
+  .tab-buttons {
+    margin-bottom: 20px;
+  }
+  
+  .tab-btn {
+    padding: 6px 12px;
+    font-size: 12px;
   }
 }
