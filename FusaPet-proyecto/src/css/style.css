@@ -1,0 +1,202 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: #e8f5e9;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  font-family: 'Segoe UI', Tahoma, sans-serif;
+}
+
+.main-container {
+  background: #ffffff;
+  box-shadow: 10px 10px 40px #e0e0e0, -10px -10px 40px #ffffff;
+  border-radius: 25px;
+  padding: 40px 50px;
+  width: 100%;
+  max-width: 420px;
+  text-align: center;
+  transition: transform 0.3s ease;
+}
+
+.main-container:hover {
+  transform: translateY(-2px);
+}
+
+h1 {
+  color: #2e7d32;
+  margin-bottom: 10px;
+  font-size: 28px;
+  letter-spacing: 1px;
+  font-weight: 300;
+}
+
+.subtitle {
+  color: #81c784;
+  margin-bottom: 35px;
+  font-size: 14px;
+}
+
+.tab-buttons {
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 30px;
+}
+
+.tab-btn {
+  background: transparent;
+  border: none;
+  color: #81c784;
+  font-size: 14px;
+  padding: 8px 16px;
+  cursor: pointer;
+  border-bottom: 2px solid transparent;
+  transition: color 0.3s;
+}
+
+.tab-btn.active {
+  color: #2e7d32;
+  border-bottom: 2px solid #2e7d32;
+}
+
+.form-group {
+  margin-bottom: 20px;
+  text-align: left;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 6px;
+  color: #546e7a;
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.form-group input {
+  width: 100%;
+  padding: 12px 15px;
+  background: #e8f5e9;
+  border: 1px solid #c8e6c9;
+  border-radius: 10px;
+  outline: none;
+  font-size: 14px;
+  color: #2e7d32;
+  transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+.form-group input:focus {
+  border-color: #2e7d32;
+  box-shadow: 0 0 0 3px #e8f5e9;
+  padding: 11px 14px;
+}
+
+.btn {
+  width: 100%;
+  padding: 12px;
+  background: #2e7d32;
+  border: none;
+  border-radius: 10px;
+  color: white;
+  font-size: 15px;
+  font-weight: 500;
+  cursor: pointer;
+  margin-top: 10px;
+  box-shadow: 4px 4px 10px #1b5e20, -4px -4px 10px #388e3c;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.btn:hover {
+  transform: translateY(2px);
+  box-shadow: 3px 3px 6px #1b5e20, -3px -3px 6px #388e3c;
+}
+
+.btn:active {
+  transform: translateY(4px);
+  box-shadow: 1px 1px 2px #1b5e20, -1px -1px 2px #388e3c;
+}
+
+.link {
+  margin-top: 15px;
+  font-size: 13px;
+}
+
+.link a {
+  color: #2e7d32;
+  text-decoration: none;
+}
+
+.link a:hover {
+  text-decoration: underline;
+}
+
+/* Login Tab */
+.login-container {
+  display: block;
+}
+
+/* Register Tab */
+.register-container {
+  display: none;
+}
+
+.register-container.active {
+  display: block;
+}
+
+@media (min-width: 768px) {
+  .main-container {
+    margin: 40px;
+    max-width: 500px;
+    padding: 50px 60px;
+  }
+  
+  h1 {
+    font-size: 32px;
+  }
+  
+  .form-group input {
+    font-size: 15px;
+  }
+  
+  .btn {
+    font-size: 16px;
+    padding: 14px;
+  }
+}
+
+@media (max-width: 480px) {
+  .main-container {
+    margin: 20px;
+    padding: 30px 20px;
+  }
+  
+  h1 {
+    font-size: 24px;
+  }
+  
+  .form-group input {
+    padding: 10px 12px;
+    font-size: 12px;
+  }
+  
+  .btn {
+    padding: 10px;
+    font-size: 13px;
+  }
+  
+  .tab-buttons {
+    margin-bottom: 20px;
+  }
+  
+  .tab-btn {
+    padding: 6px 12px;
+    font-size: 12px;
+  }
+}
