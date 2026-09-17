@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FusaPet - Inicio de Sesión y Registro</title>
+  <link rel="stylesheet" href="src/css/style.css">
+</head>
+<body>
+  <div class="main-container">
+    <h1>FusaPet</h1>
+    <p class="subtitle">Bienvenido a tu comunidad de mascotas</p>
+    
+    <div class="tab-buttons">
+      <button class="tab-btn active" id="login-tab" onclick="showTab('login')">Iniciar Sesión</button>
+      <button class="tab-btn" id="register-tab" onclick="showTab('register')">Crear Cuenta</button>
+    </div>
+    
+    <form id="login-form" class="form-group login-container">
+      <div class="form-group">
+        <label for="login-email">Correo electrónico</label>
+        <input type="email" id="login-email" required placeholder="tu@email.com">
+      </div>
+      <div class="form-group">
+        <label for="login-password">Contraseña</label>
+        <input type="password" id="login-password" required placeholder="••••••••">
+      </div>
+      <button type="submit" class="btn">Ingresar</button>
+    </form>
+    
+    <form id="register-form" class="form-group register-container">
+      <div class="form-group">
+        <label for="register-name">Nombre</label>
+        <input type="text" id="register-name" required placeholder="Tu nombre completo">
+      </div>
+      <div class="form-group">
+        <label for="register-email">Correo electrónico</label>
+        <input type="email" id="register-email" required placeholder="tu@email.com">
+      </div>
+      <div class="form-group">
+        <label for="register-password">Contraseña</label>
+        <input type="password" id="register-password" required placeholder="••••••••">
+      </div>
+      <button type="submit" class="btn">Registrarse</button>
+    </form>
+    
+    <div class="link">
+      <a id="switch-link" href="#">¿Ya tienes cuenta? Inicia sesión</a>
+    </div>
+  </div>
+  <script src="src/js/script.js"></script>
+</body>
+</html>
