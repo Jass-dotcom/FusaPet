@@ -3,51 +3,36 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>FusaPet - Inicio de Sesión y Registro</title>
+  <title>FusaPet - Tu comunidad de mascotas perdidas y encontradas</title>
+  <meta name="description" content="FusaPet - Reporta mascotas perdidas, encontradas y avistamientos en tu comunidad.">
+  <meta name="theme-color" content="#2e7d32">
+  <meta name="color-scheme" content="light">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="FusaPet">
+  <meta property="og:title" content="FusaPet - Mascotas perdidas y encontradas">
+  <meta property="og:description" content="Reporta mascotas perdidas, encontradas y avistamientos en tu comunidad.">
+  <script type="application/ld+json">
+    {"@context":"https://schema.org","@type":"Organization","name":"FusaPet","description":"Plataforma comunitaria para reportar mascotas perdidas, encontradas y avistamientos."}
+  </script>
   <link rel="stylesheet" href="src/css/style.css">
+  <link rel="stylesheet" href="src/css/components/auth.css">
+  <link rel="stylesheet" href="src/css/components/modal.css">
+  <link rel="stylesheet" href="src/css/components/toast.css">
+  <link rel="stylesheet" href="src/css/components/reports.css">
+  <link rel="stylesheet" href="src/css/components/pets.css">
+  <link rel="stylesheet" href="src/css/components/map.css">
+  <link rel="stylesheet" href="src/css/components/admin.css">
+  <!-- Las hojas de estilo de mapas se cargan solo cuando la persona abre el mapa. -->
 </head>
 <body>
-  <div class="main-container">
-    <h1>FusaPet</h1>
-    <p class="subtitle">Bienvenido a tu comunidad de mascotas</p>
-    
-    <div class="tab-buttons">
-      <button class="tab-btn active" id="login-tab" onclick="showTab('login')">Iniciar Sesión</button>
-      <button class="tab-btn" id="register-tab" onclick="showTab('register')">Crear Cuenta</button>
-    </div>
-    
-    <form id="login-form" class="form-group login-container">
-      <div class="form-group">
-        <label for="login-email">Correo electrónico</label>
-        <input type="email" id="login-email" required placeholder="tu@email.com">
-      </div>
-      <div class="form-group">
-        <label for="login-password">Contraseña</label>
-        <input type="password" id="login-password" required placeholder="••••••••">
-      </div>
-      <button type="submit" class="btn">Ingresar</button>
-    </form>
-    
-    <form id="register-form" class="form-group register-container">
-      <div class="form-group">
-        <label for="register-name">Nombre</label>
-        <input type="text" id="register-name" required placeholder="Tu nombre completo">
-      </div>
-      <div class="form-group">
-        <label for="register-email">Correo electrónico</label>
-        <input type="email" id="register-email" required placeholder="tu@email.com">
-      </div>
-      <div class="form-group">
-        <label for="register-password">Contraseña</label>
-        <input type="password" id="register-password" required placeholder="••••••••">
-      </div>
-      <button type="submit" class="btn">Registrarse</button>
-    </form>
-    
-    <div class="link">
-      <a id="switch-link" href="#">¿Ya tienes cuenta? Inicia sesión</a>
+  <a class="skip-link" href="#app-main">Saltar al contenido principal</a>
+  <div id="app">
+    <div class="loading-screen" role="status">
+      <div class="spinner"></div>
+      <p>Cargando FusaPet...</p>
     </div>
   </div>
-  <script src="src/js/script.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script defer src="src/js/app.js"></script>
 </body>
 </html>
